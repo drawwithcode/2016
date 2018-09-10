@@ -95,7 +95,6 @@
 		d3.tsv('data/list-projects.tsv', function(list) {
 			if (list.length > 0) {
 				list.forEach(function(i) {
-					console.log(i)
 					var thumb = "background-image: url('imgs/covers-projects/" + i.title + ".png')"
 					var newElement = '<div class="col-xs-6 col-sm-4 col-md-4"><a href=' + i.gh_page + '><p class="name">' + i.group + ". " + i.title + '</p><div class="sketch-thumb img-thumbnail" style="' + thumb + '"></div></a></div>';
 					var currentHtml = d3.select('#group-works-gallery').html();
