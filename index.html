@@ -79,28 +79,28 @@
 
 	<script>
 		var initialElm;
-		d3.tsv('list.tsv', function(list) {
+		d3.tsv('data/list-assignments.tsv', function(list) {
 			if (list.length > 0) {
 				list.forEach(function(i) {
 					//var iframe = "setInfo('assignments/"+i.name+"/index.html', '"+i.link+"', '"+i.nameDisplay.toLowerCase()+"')";
-					var thumb = "background-image: url('" + i.thumb + "')"
+					var thumb = "background-image: url('imgs/covers-assignments/" + i.thumb + "')"
 					var newElement = '<div class="col-xs-6 col-sm-4 col-md-4"><a href=' + i.link + '><p class="name">' + i.date + ". " + i.title + '</p><div class="sketch-thumb img-thumbnail" style="' + thumb + '"></div></a></div>';
-					var currentHtml = d3.select('#projects-gallery').html()
-					currentHtml += newElement
-					d3.select('#projects-gallery').html(currentHtml)
+					var currentHtml = d3.select('#projects-gallery').html();
+					currentHtml += newElement;
+					d3.select('#projects-gallery').html(currentHtml);
 				})
 			}
 		})
 
-		d3.tsv('final-projects-list.tsv', function(list) {
+		d3.tsv('data/list-projects.tsv', function(list) {
 			if (list.length > 0) {
 				list.forEach(function(i) {
 					console.log(i)
-					var thumb = "background-image: url('covers-projects/" + i.title + ".png')"
+					var thumb = "background-image: url('imgs/covers-projects/" + i.title + ".png')"
 					var newElement = '<div class="col-xs-6 col-sm-4 col-md-4"><a href=' + i.gh_page + '><p class="name">' + i.group + ". " + i.title + '</p><div class="sketch-thumb img-thumbnail" style="' + thumb + '"></div></a></div>';
-					var currentHtml = d3.select('#group-works-gallery').html()
-					currentHtml += newElement
-					d3.select('#group-works-gallery').html(currentHtml)
+					var currentHtml = d3.select('#group-works-gallery').html();
+					currentHtml += newElement;
+					d3.select('#group-works-gallery').html(currentHtml);
 				})
 			}
 		})
